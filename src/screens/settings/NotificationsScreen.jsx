@@ -87,20 +87,20 @@ export const NotificationScreen = ({ navigation, route }) => {
   const changeDataWird = React.useCallback(async (newData) => {
     setIsLoading(true);
    // console.log(data)
-    if (data.selected !== newData.selected || data.number !== newData.number) {
+    if (data?.selected !== newData.selected || data?.number !== newData.number) {
       newData.body = calcWird(newData.selected, stop, newData);
       ///console.log(newData.body,'body')
     }
     let id;
-    if (data.isEnabled !== newData.isEnabled) {
+    if (data?.isEnabled !== newData.isEnabled) {
       if (newData.isEnabled) {
         id = await setNotification(newData);
        // console.log('id',id)
       } else {
-        await cancelNotification(data.id);
+        await cancelNotification(data?.id);
       }
-    } else if (data.isEnabled) {
-      await cancelNotification(data.id);
+    } else if (data?.isEnabled) {
+      await cancelNotification(data?.id);
       id = await setNotification(newData);
        console.log('id2',id)
     }
@@ -128,15 +128,15 @@ export const NotificationScreen = ({ navigation, route }) => {
   }, [data]);
   const changeData = React.useCallback(async (newData) => {
     setIsLoading(true);
-    if (data.isEnabled !== newData.isEnabled) {
+    if (data?.isEnabled !== newData.isEnabled) {
       if (newData.isEnabled) {
         id = await setNotification(newData);
         //console.log(id)
       } else {
-        await cancelNotification(data.id);
+        await cancelNotification(data?.id);
       }
-    } else if (data.isEnabled) {
-      await cancelNotification(data.id);
+    } else if (data?.isEnabled) {
+      await cancelNotification(data?.id);
       id = await setNotification(newData);
     }
     if (id) newData.id = id;
@@ -195,7 +195,7 @@ export const NotificationScreen = ({ navigation, route }) => {
         >
           <Spinner color={theme.PRIMARY} />
         </View>
-      ) : !isPermisionApprove || (!data.title && !data.time) ? ( <View 
+      ) : !isPermisionApprove || (!data?.title && !data?.time) ? ( <View 
             style={{flex:1,justifyContent:'center',alignItems:'center',backgroundColor:theme.BG}}>
               <Text
               style={{
@@ -228,10 +228,10 @@ export const NotificationScreen = ({ navigation, route }) => {
 };
 const NotificationList = ({ theme, name,font, changeData, data = {}, disabled }) => {
   const number = name === "azkarElsbah" ? 0 : name === "azkarElmsaa" ? 1 : 16;
-  const [isActive, setIsActive] = useState(data.isEnabled);
+  const [isActive, setIsActive] = useState(data?.isEnabled);
   const [isVisibel, setIsVisibel] = useState(false);
-  const [selected, setSelected] = useState(data.selected);
-  const [time, setTime] = useState(moment(data.time));
+  const [selected, setSelected] = useState(data?.selected);
+  const [time, setTime] = useState(moment(data?.time));
   const showDateTimePicker = () => {
     setIsVisibel(true);
   };
@@ -412,9 +412,9 @@ const NotificationList = ({ theme, name,font, changeData, data = {}, disabled })
           })
         }
         disabled={
-          data.selected === selected &&
-          data.isEnabled === isActive &&
-          data.time === new Date(time).getTime()
+          data?.selected === selected &&
+          data?.isEnabled === isActive &&
+          data?.time === new Date(time).getTime()
         }
         style={{
           backgroundColor: theme.PRIMARY,
@@ -440,9 +440,9 @@ const NotificationList = ({ theme, name,font, changeData, data = {}, disabled })
 const Elwird = ({ theme,font, data={}, changeData, disabled }) => {
   const [isActive, setIsActive] = useState(data.isEnabled);
   const [isVisibel, setIsVisibel] = useState(false);
-  const [time, setTime] = useState(moment(data.time));
-  const [number, setNumber] = useState(data.number);
-  const [selected, setSelected] = useState(data.selected);
+  const [time, setTime] = useState(moment(data?.time));
+  const [number, setNumber] = useState(data?.number);
+  const [selected, setSelected] = useState(data?.selected);
   const showDateTimePicker = () => {
     setIsVisibel(true);
   };
@@ -654,10 +654,10 @@ const Elwird = ({ theme,font, data={}, changeData, disabled }) => {
           })
         }
         disabled={
-          data.selected === selected &&
+          data?.selected === selected &&
           number === data.number &&
-          data.isEnabled === isActive &&
-          data.time === new Date(time).getTime()
+          data?.isEnabled === isActive &&
+          data?.time === new Date(time).getTime()
         }
         style={{
           backgroundColor: theme.PRIMARY,

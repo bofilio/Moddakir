@@ -143,7 +143,8 @@ class RecordBody extends React.Component {
     // this.recordingSettings.android['maxFileSize'] = 12000;
   }
   _askForPermissions = async () => {
-    const response = await Permissions.askAsync(Permissions.AUDIO_RECORDING);
+    const response = await Audio.requestPermissionsAsync();
+    //const response = await Permissions.askAsync(Permissions.AUDIO_RECORDING);
     this.setState({
       haveRecordingPermissions: response.status === "granted",
     });
