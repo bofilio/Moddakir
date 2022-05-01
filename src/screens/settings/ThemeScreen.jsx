@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import {View,Text,FlatList,Dimensions,AsyncStorage} from 'react-native';
+import {View,Text,FlatList,Dimensions} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Header,Container,Spinner,Content,Title,Left,Right,Body,Button,Radio} from 'native-base';
 import { useSelector,useDispatch } from "react-redux";
 import { LeftArrowIOS } from "../../assets/icons";

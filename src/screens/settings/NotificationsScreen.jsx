@@ -22,10 +22,10 @@ import {
   StyleSheet,
   Dimensions,
   Text,
-  AsyncStorage,
   View,
   Slider,
 } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import DateTimePicker from "react-native-modal-datetime-picker";
 import moment from "moment";
 import azkar from "../../store/azkar";
@@ -244,7 +244,7 @@ const NotificationList = ({ theme, name,font, changeData, data = {}, disabled })
     hideDateTimePicker();
     setTime(moment(date));
   };
-  const onValueChange = (value: string) => {
+  const onValueChange = (value) => {
     setSelected(value);
   };
   return (
@@ -455,7 +455,7 @@ const Elwird = ({ theme,font, data={}, changeData, disabled }) => {
     hideDateTimePicker();
     setTime(moment(date));
   };
-  const onValueChange = (value: string) => {
+  const onValueChange = (value) => {
     setSelected(value);
   };
   return (

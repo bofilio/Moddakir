@@ -63,7 +63,7 @@ const DialogComponent = ({ theme,font, recordingDuration, isLoading }) => {
         <Dialog.Input
           label="Name"
           style={{ fontFamily: font.app.fontName }}
-          onChangeText={(email: string) => setName(email)}
+          onChangeText={(email) => setName(email)}
         ></Dialog.Input>
         <Dialog.Button label="Cancel" onPress={handleCancel} />
         <Dialog.Button label="Save" onPress={handleSave} />

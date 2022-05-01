@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Text, View, ImageBackground, AsyncStorage } from "react-native";
+import { Text, View, ImageBackground } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   NameWrapper,
   Share,

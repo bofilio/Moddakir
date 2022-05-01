@@ -1,5 +1,5 @@
 import { Notifications } from 'expo';
-import {AsyncStorage} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import azkar from '../store/azkar.js'
 import Constant from "expo-constants";
 import * as Permissions from 'expo-permissions';

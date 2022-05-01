@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import { View, FlatList, Dimensions, AsyncStorage } from "react-native";
+import { View, FlatList, Dimensions } from "react-native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import SurahItem from "./SurahItem.jsx";
 import { useSelector, useDispatch } from "react-redux";
 import { Spinner, Button, Text, Content } from "native-base";

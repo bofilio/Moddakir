@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
-import {View,Text,FlatList,Dimensions,AsyncStorage} from 'react-native';
+import {View,Text,FlatList,Dimensions} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Header,Container,Spinner,Content,Title,Left,Picker,Right,Body,Button,Toast,Radio,List,ListItem} from 'native-base';
 import { useSelector,useDispatch } from "react-redux";
 import { LeftArrowIOS } from "../../assets/icons";
@@ -48,10 +49,10 @@ const dispatch = useDispatch();
 
   const [selectedApp,setSelectedApp]=useState(font.app.id)
   const [selectedQuran,setSelectedQuran]=useState(font.quran.id)
-  const onValueChange1 = (value: string) => {
+  const onValueChange1 = (value) => {
     setSelectedQuran(value);
   };
-  const onValueChange2 = (value: string) => {
+  const onValueChange2 = (value) => {
     setSelectedApp(value);
   };
    const setFont=async ()=>{
