@@ -77,7 +77,7 @@ export const NotificationScreen = ({ navigation, route }) => {
       setData(JSON.parse(item));
      // console.log(JSON.parse(item));
     }catch (err) {
-      alert("something went wrong!");
+      alert("something went wrong!"+err.message);
     }
   };
   // const del = async ()=>{ 
@@ -108,7 +108,7 @@ export const NotificationScreen = ({ navigation, route }) => {
     try {
       await AsyncStorage.setItem(name, JSON.stringify(newData));
     } catch (err) {
-      alert("something went wrong!");
+      alert("something went wrong!"+err.message);
     }
     Toast.show({
       text: "تم حفظ التغيرات بنجاح",
@@ -143,7 +143,7 @@ export const NotificationScreen = ({ navigation, route }) => {
     try {
       await AsyncStorage.setItem(name, JSON.stringify(newData));
     } catch (err) {
-      alert("something went wrong!");
+      alert("something went wrong!"+err.message);
     }
     Toast.show({
       text: "تم حفظ التغيرات بنجاح",

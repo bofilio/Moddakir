@@ -157,7 +157,7 @@ export const AyahContent = React.memo(
         try {
           await AsyncStorage.setItem("elwird", JSON.stringify(newData));
         } catch (err) {
-          alert("something went wrong!");
+          alert("something went wrong!"+err.message);
         }
       }
       try {

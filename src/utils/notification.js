@@ -1,11 +1,12 @@
-import { Notifications } from 'expo';
+import * as Notifications from 'expo-notifications';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import azkar from '../store/azkar.js'
 import Constant from "expo-constants";
 import * as Permissions from 'expo-permissions';
+import * as Device from 'expo-device';
  
 export const askForPermission = async()=>{
-	if (Constant.isDevice) {
+	if (Device.isDevice) {
 	   const { status: existingStatus } = await Notifications.getPermissionsAsync();
 	    let finalState = existingStatus;
 	    if (existingStatus !== "granted") {

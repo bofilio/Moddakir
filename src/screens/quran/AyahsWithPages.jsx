@@ -1,5 +1,6 @@
 import  React,{useEffect,useState} from 'react';
-import { Text,  Animated, View,Image, AsyncStorage,StyleSheet,ImageBackground,Dimensions,TouchableWithoutFeedback } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { Text,  Animated, View,Image,StyleSheet,ImageBackground,Dimensions,TouchableWithoutFeedback } from 'react-native';
 import Constants from 'expo-constants';
 import {
   Container,
@@ -75,7 +76,7 @@ const AyahModal=({theme,font})=>{
         try {
           await AsyncStorage.setItem("elwird", JSON.stringify(newData));
         } catch (err) {
-          alert("something went wrong!");
+          alert("something went wrong!"+ err.message);
         }
       }
       try {
