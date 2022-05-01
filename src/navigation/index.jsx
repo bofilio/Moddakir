@@ -164,7 +164,7 @@ const Main = () => {
         }
       }
     } catch (err) {
-      alert('Failed to get push token for push notification!');
+      alert('Failed to get push token for push notification!'+err.message);
     }
   }
   React.useEffect(() => {
